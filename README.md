@@ -1,70 +1,190 @@
-Login System Using Servlets and JSP
-Overview
-The Login System Using Servlets and JSP is a simple, yet powerful web application designed to provide secure and efficient login functionality. Built using Java Servlets and JavaServer Pages (JSP), this project showcases the integration of server-side Java technologies to manage user authentication and session management. It offers users the ability to securely log in with their credentials and view a personalized welcome page.
+# Student Login System
 
-This project is a great starting point for developers learning Java web technologies and understanding how to implement a basic login system using Servlets and JSP.
+A simple web application where a student can create an account, log in, and view a personal dashboard after successful authentication.
 
-Features
-User Authentication: Secure login with username and password verification.
-Session Management: Uses HTTP sessions to maintain user state after login.
-Simple and Intuitive UI: A basic login form with error handling and validation.
-Error Messages: Displays clear error messages for invalid login attempts.
-Logout Functionality: Allows users to log out and end the session securely.
-Servlet and JSP Integration: Demonstrates the interaction between Servlets and JSPs for handling requests and presenting views.
-Technologies Used
-Java: The core language for building the backend of the application.
-Servlets: Server-side Java components that handle HTTP requests and responses.
-JSP (JavaServer Pages): Used for dynamic web page creation and displaying views.
-Session Management: HTTP sessions for user authentication.
-Tomcat: Web server for hosting the application.
-Setup Instructions
-Follow these steps to set up the Login System Using Servlets and JSP:
+Think of it as a mini website that works like a student portal: a user signs up, enters their credentials, gets access only after login, and then sees their details on a secure page.
 
-Clone or Download the Repository: Clone the repository or download the ZIP file to your local machine.
+This project is designed to help beginners understand how Java web applications work using Servlets and JSP.
 
-Prerequisites:
+## What this project does
 
-Java Development Kit (JDK) 8 or higher.
-Apache Tomcat (or any servlet container) for running the application.
-Import the Project into an IDE: Import the project into your preferred Java IDE (e.g., Eclipse, IntelliJ IDEA).
+This app allows a user to:
 
-Configure the Tomcat Server:
+- register a new account
+- log in with a username and password
+- stay logged in while the session is active
+- view a dashboard with their profile information
+- log out securely
+- see helpful error messages if login or registration fails
 
-If using Eclipse or IntelliJ, configure Apache Tomcat in your IDE.
-Make sure the server is running on the correct port (usually 8080).
-Deploy the Application:
+In simple words: it is a basic login system with a signup page and a private dashboard.
 
-In your IDE, deploy the project to Tomcat by running it as a web application.
-Access the Application:
+## Why this project is useful
 
-Open your browser and go to http://localhost:8080/LoginSystem to access the login page.
-How to Use
-Login Page:
+This project is a great beginner-friendly example of:
 
-Navigate to the Login Page where you’ll be prompted to enter your username and password.
-Enter the credentials, and click the Login button.
-User Authentication:
+- how web pages connect to Java code
+- how users are verified before being allowed in
+- how sessions keep track of logged-in users
+- how JSP pages display dynamic content
+- how a basic web application is structured
 
-The application will validate the login credentials.
-If the credentials are correct, you will be redirected to a Welcome Page with a personalized message.
-Logout:
+## Simple flow of the app
 
-Once logged in, you can click the Logout button to securely end your session.
-Error Handling:
+1. A new user opens the registration page.
+2. They enter details like username, password, name, email, and course.
+3. The app checks if the username and roll number are already in use.
+4. If everything is valid, the user is successfully registered.
+5. The user then logs in with their username and password.
+6. If the login is correct, the app creates a session and redirects the user to the dashboard.
+7. The dashboard shows the user’s information.
+8. The user can log out when finished.
 
-If the username or password is incorrect, an error message will be displayed.
-You can try again with the correct credentials.
-Example Screenshots
-Login Page – A clean login form.
-Welcome Page – A personalized page after successful login.
-Error Message – Error displayed when invalid login credentials are provided.
+## Main features
 
+- User registration form
+- Login page with username/password validation
+- Session management for logged-in users
+- Personal dashboard after login
+- Logout functionality
+- Error handling for invalid login or password mismatch
+- Beginner-friendly Java web project structure
 
-License
+## How it works behind the scenes
+
+This project uses a common Java web architecture:
+
+- JSP files handle the UI (web pages seen by users)
+- Servlets handle requests such as login and registration
+- Java classes store user data temporarily in memory
+- HTTP sessions keep track of who is logged in
+- Tomcat runs the web application locally in the browser
+
+So when a user clicks Login, the browser sends the information to a Java Servlet. The Servlet checks the credentials and either allows access or shows an error.
+
+## Technology used
+
+- Java
+- Java Servlets
+- JSP (JavaServer Pages)
+- Apache Tomcat
+- HTML/CSS for the page design
+
+## Project structure
+
+```text
+Login-System-Using-Servlets-and-JSP/
+├── README.md
+├── src/
+│   └── main/
+│       ├── java/
+│       │   ├── demo/
+│       │   └── login_system/
+│       │       ├── DashboardServlet.java
+│       │       ├── LoginServlet.java
+│       │       ├── LogoutServlet.java
+│       │       ├── RegisterServlet.java
+│       │       └── dto/
+│       │           ├── Student.java
+│       │           └── UserStore.java
+│       └── webapp/
+│           ├── login.jsp
+│           ├── register.jsp
+│           ├── dashboard.jsp
+│           ├── success.jsp
+│           ├── error.jsp
+│           └── WEB-INF/
+├── .classpath
+├── .project
+└── LICENSE
+```
+
+## Prerequisites
+
+Before running this project, make sure you have:
+
+- Java JDK 8 or newer
+- Apache Tomcat installed
+- An IDE such as Eclipse or IntelliJ IDEA
+
+## How to run the project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/legion0069/Login-System-Using-Servlets-and-JSP.git
+```
+
+### 2. Open it in your IDE
+
+Import the project into Eclipse or IntelliJ IDEA.
+
+### 3. Configure Tomcat
+
+Add Apache Tomcat to your IDE and set it as the server for this project.
+
+### 4. Run the project
+
+Deploy the application to Tomcat and start the server.
+
+### 5. Open the app in your browser
+
+Usually, the app will be available at:
+
+```text
+http://localhost:8080/LoginSystem
+```
+
+If your project name or server configuration is different, the actual URL may vary slightly. But in most cases it will be a localhost Tomcat URL.
+
+## Typical user journey
+
+### Registration
+
+The user enters:
+
+- roll number
+- username
+- password
+- confirm password
+- full name
+- email
+- date of birth
+- gender
+- course
+- address
+
+The application checks whether the username and roll number are already taken before creating the account.
+
+### Login
+
+The user types their username and password. If the details match, they are taken to the dashboard.
+
+### Dashboard
+
+After login, the user sees their personal information on a welcome page and can log out safely.
+
+## Important note
+
+This project stores user data in memory while the server is running. That means the data is not permanently saved to a database. It is a great beginner example, but it is not meant for production use.
+
+For a real-world app, you would usually connect it to a database and use password hashing.
+
+## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Acknowledgements
-Java for the powerful backend development.
-Apache Tomcat for serving Java web applications.
-JSP for dynamic page creation.
-Feel free to modify the login credentials and further enhance the functionality by adding database integration or more advanced features like password hashing.
+## Acknowledgements
+
+This project was created to demonstrate beginner-level Java web development concepts such as:
+
+- login and registration
+- HTTP sessions
+- Java EE web apps
+- JSP and Servlet integration
+
+It is a simple but practical example for learning how a login system works.
+
+## Final message
+
+This project is a beginner-friendly example of how a real login system works in Java web applications. It is a good starting point for students and developers who want to understand user authentication, page navigation, and session-based security in a web app.
